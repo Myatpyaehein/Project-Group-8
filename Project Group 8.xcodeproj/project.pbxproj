@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		709E14D921582CA100F97F41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9434CDDB2152FD05002B31A1 /* Project Group 8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Group 8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9434CDDE2152FD05002B31A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9434CDE02152FD05002B31A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,9 +40,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		709E14D721582AAC00F97F41 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		9434CDD22152FD05002B31A1 = {
 			isa = PBXGroup;
 			children = (
+				709E14D721582AAC00F97F41 /* Supporting Files */,
 				9434CDDD2152FD05002B31A1 /* Project Group 8 */,
 				9434CDDC2152FD05002B31A1 /* Products */,
 				9434CDF12152FD35002B31A1 /* Frameworks */,
@@ -169,6 +178,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				9434CDE32152FD05002B31A1 /* Base */,
+				709E14D921582CA100F97F41 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
