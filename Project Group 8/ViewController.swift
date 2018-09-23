@@ -8,6 +8,10 @@
 
 import UIKit
 import UserNotifications
+import MapKit
+import Photos
+import PhotosUI
+import CloudKit
 
 class ViewController: UIViewController {
 
