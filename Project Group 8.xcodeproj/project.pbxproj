@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		70BD96C0216D5B56006F549E /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD96BF216D5B56006F549E /* QuestionViewController.swift */; };
 		9434CDDF2152FD05002B31A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CDDE2152FD05002B31A1 /* AppDelegate.swift */; };
 		9434CDE12152FD05002B31A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CDE02152FD05002B31A1 /* ViewController.swift */; };
 		9434CDE42152FD05002B31A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9434CDE22152FD05002B31A1 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		709E14D921582CA100F97F41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		70BD96BF216D5B56006F549E /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		9434CDDB2152FD05002B31A1 /* Project Group 8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Group 8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9434CDDE2152FD05002B31A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9434CDE02152FD05002B31A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				9434CDE52152FD07002B31A1 /* Assets.xcassets */,
 				9434CDE72152FD07002B31A1 /* LaunchScreen.storyboard */,
 				9434CDEA2152FD07002B31A1 /* Info.plist */,
+				70BD96BF216D5B56006F549E /* QuestionViewController.swift */,
 			);
 			path = "Project Group 8";
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9434CDE12152FD05002B31A1 /* ViewController.swift in Sources */,
+				70BD96C0216D5B56006F549E /* QuestionViewController.swift in Sources */,
 				9434CDDF2152FD05002B31A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
