@@ -7,6 +7,8 @@ target 'Project Group 8' do
 
   # Pods for Project Group 8
 
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+
 end
 
-pod 'Firebase/Core'
