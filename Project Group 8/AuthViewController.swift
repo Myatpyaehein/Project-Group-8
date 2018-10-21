@@ -50,18 +50,28 @@ class AuthViewController: UIViewController {
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found
+                        let alertController = UIAlertController(title: "Sign In failed", message: "Please enter correct email and password", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                        alertController.addAction(cancelAction)
+                        
+                        self.present(alertController, animated: true)
                     }
                 })
             }
             //register
             else {
-                Auth.auth().createUser(withEmail: email, password: password, completion:  { (authResult, error) in
+                Auth.auth().createUser(withEmail: email, password: password, completion:  { (user, error) in
                     // check that user is not nil
-                    if let u = authResult {
+                    if let u = user {
                         //user if found
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found
+                        let alertController = UIAlertController(title: "Registration failed", message: "Please enter correct email and password", preferredStyle: .alert)
+                        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+                        alertController.addAction(cancelAction)
+                        
+                        self.present(alertController, animated: true)
                     }
                 })
 //                    guard let user = authResult?.user else { return }
