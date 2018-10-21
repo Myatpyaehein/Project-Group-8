@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31F9DCC2633A47191CC407FC /* Pods_Project_Group_8.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307A26A07646B9C0896EBEE3 /* Pods_Project_Group_8.framework */; };
+		700AE0F0217C43750057EAE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 700AE0EF217C43750057EAE3 /* GoogleService-Info.plist */; };
 		70BD96C0216D5B56006F549E /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BD96BF216D5B56006F549E /* QuestionViewController.swift */; };
 		9434CDDF2152FD05002B31A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CDDE2152FD05002B31A1 /* AppDelegate.swift */; };
 		9434CDE12152FD05002B31A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9434CDE02152FD05002B31A1 /* ViewController.swift */; };
@@ -17,8 +19,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		307A26A07646B9C0896EBEE3 /* Pods_Project_Group_8.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Project_Group_8.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		40F35D509968973A5A2E9A5D /* Pods-Project Group 8.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Group 8.release.xcconfig"; path = "Pods/Target Support Files/Pods-Project Group 8/Pods-Project Group 8.release.xcconfig"; sourceTree = "<group>"; };
+		700AE0EF217C43750057EAE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		709E14D921582CA100F97F41 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		70BD96BF216D5B56006F549E /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		84B1200C26BAECA69153BE1D /* Pods-Project Group 8.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Project Group 8.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Project Group 8/Pods-Project Group 8.debug.xcconfig"; sourceTree = "<group>"; };
 		9434CDDB2152FD05002B31A1 /* Project Group 8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Project Group 8.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9434CDDE2152FD05002B31A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9434CDE02152FD05002B31A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,12 +42,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				9434CDF32152FD35002B31A1 /* CloudKit.framework in Frameworks */,
+				31F9DCC2633A47191CC407FC /* Pods_Project_Group_8.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C41C48307E67CF4D760AB90 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84B1200C26BAECA69153BE1D /* Pods-Project Group 8.debug.xcconfig */,
+				40F35D509968973A5A2E9A5D /* Pods-Project Group 8.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		709E14D721582AAC00F97F41 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +72,7 @@
 				9434CDDD2152FD05002B31A1 /* Project Group 8 */,
 				9434CDDC2152FD05002B31A1 /* Products */,
 				9434CDF12152FD35002B31A1 /* Frameworks */,
+				1C41C48307E67CF4D760AB90 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +89,7 @@
 			children = (
 				9434CDF02152FD22002B31A1 /* Project Group 8.entitlements */,
 				9434CDDE2152FD05002B31A1 /* AppDelegate.swift */,
+				700AE0EF217C43750057EAE3 /* GoogleService-Info.plist */,
 				9434CDE02152FD05002B31A1 /* ViewController.swift */,
 				9434CDE22152FD05002B31A1 /* Main.storyboard */,
 				9434CDE52152FD07002B31A1 /* Assets.xcassets */,
@@ -86,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9434CDF22152FD35002B31A1 /* CloudKit.framework */,
+				307A26A07646B9C0896EBEE3 /* Pods_Project_Group_8.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9434CDED2152FD07002B31A1 /* Build configuration list for PBXNativeTarget "Project Group 8" */;
 			buildPhases = (
+				F27AAB2D2CD1E63202FE5361 /* [CP] Check Pods Manifest.lock */,
 				9434CDD72152FD05002B31A1 /* Sources */,
 				9434CDD82152FD05002B31A1 /* Frameworks */,
 				9434CDD92152FD05002B31A1 /* Resources */,
+				2C8188EEA8FB39788692A4AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -157,12 +178,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				9434CDE92152FD07002B31A1 /* LaunchScreen.storyboard in Resources */,
+				700AE0F0217C43750057EAE3 /* GoogleService-Info.plist in Resources */,
 				9434CDE62152FD07002B31A1 /* Assets.xcassets in Resources */,
 				9434CDE42152FD05002B31A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C8188EEA8FB39788692A4AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Project Group 8/Pods-Project Group 8-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Project Group 8/Pods-Project Group 8-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F27AAB2D2CD1E63202FE5361 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Project Group 8-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9434CDD72152FD05002B31A1 /* Sources */ = {
@@ -316,6 +379,7 @@
 		};
 		9434CDEE2152FD07002B31A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84B1200C26BAECA69153BE1D /* Pods-Project Group 8.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Project Group 8/Project Group 8.entitlements";
@@ -335,6 +399,7 @@
 		};
 		9434CDEF2152FD07002B31A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40F35D509968973A5A2E9A5D /* Pods-Project Group 8.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Project Group 8/Project Group 8.entitlements";
