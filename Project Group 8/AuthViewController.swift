@@ -21,7 +21,6 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     
     var isSignIn: Bool = true
-    
     @IBAction func authSelectorChange(_ sender: UISegmentedControl) {
         isSignIn = !isSignIn
         if isSignIn {

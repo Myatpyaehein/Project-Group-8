@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fJt-Bk-8FF"/>
@@ -118,7 +118,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="e8h-5E-ZWF" firstAttribute="centerY" secondItem="47F-f4-rxs" secondAttribute="centerY" id="DSu-Oh-9Ot"/>
                             <constraint firstItem="jTG-nA-SA9" firstAttribute="trailing" secondItem="e8h-5E-ZWF" secondAttribute="trailing" constant="123" id="lMw-eD-0R2"/>
@@ -159,7 +159,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="WTR-Bb-eWx" firstAttribute="centerY" secondItem="KeF-iD-Pv4" secondAttribute="centerY" id="RlP-bn-MFB"/>
                             <constraint firstItem="WTR-Bb-eWx" firstAttribute="centerY" secondItem="KeF-iD-Pv4" secondAttribute="centerY" id="aFB-dc-OHk"/>
