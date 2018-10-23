@@ -33,7 +33,7 @@
                                 <rect key="frame" x="61" y="602" width="252" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="GET START!"/>
+                                <state key="normal" title="GET STARTED!"/>
                                 <connections>
                                     <segue destination="Dmg-ry-dM2" kind="show" identifier="Authorization" id="xl6-Hw-6ro"/>
                                 </connections>

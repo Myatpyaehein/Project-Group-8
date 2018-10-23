@@ -12,7 +12,6 @@ import MapKit
 import Photos
 import PhotosUI
 import CloudKit
-
 class ViewController: UIViewController {
 
     private let locationManager = CLLocationManager()
