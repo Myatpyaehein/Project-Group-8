@@ -19,6 +19,7 @@ class AuthViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
+    @IBOutlet weak var forgetPasswordButton: UIButton!
     
     var isSignIn: Bool = true
     @IBAction func authSelectorChange(_ sender: UISegmentedControl) {
@@ -69,7 +70,6 @@ class AuthViewController: UIViewController {
                         let alertController = UIAlertController(title: "Registration failed", message: "Please enter correct email and password", preferredStyle: .alert)
                         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                         alertController.addAction(cancelAction)
-                        
                         self.present(alertController, animated: true)
                     }
                 })
@@ -78,11 +78,12 @@ class AuthViewController: UIViewController {
                 
             }
         }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()
     }
-    }
+}
     
     /*
     // MARK: - Navigation
