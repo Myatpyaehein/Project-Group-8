@@ -17,52 +17,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqX-ra-kMZ">
-                                <rect key="frame" x="61" y="86" width="252" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Notification trigger"/>
-                                <connections>
-                                    <action selector="Notification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bk8-2x-7KN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-Oj-QIK">
-                                <rect key="frame" x="61" y="602" width="252" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="GET STARTED!"/>
-                                <connections>
-                                    <segue destination="Dmg-ry-dM2" kind="show" identifier="Authorization" id="xl6-Hw-6ro"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SpartanVeyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-9r-R3a">
-                                <rect key="frame" x="67" y="103" width="240" height="271"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="An easy-to-use tool to make and take surveys among the San Jose State Student Body!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-y3-vUz">
-                                <rect key="frame" x="67" y="444" width="240" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-tI-7uM">
-                                <rect key="frame" x="67" y="382" width="240" height="74"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="SPARTANVEY">
-                                        <attributes>
-                                            <color key="NSColor" red="0.20610597729682922" green="0.47088390588760376" blue="0.96475857496261597" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="36" name="Futura-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J9U-my-Gsw">
+                                <rect key="frame" x="37.666666666666657" y="110" width="300" height="646"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SpartanVeyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-9r-R3a">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="2d6-JO-VmU"/>
+                                            <constraint firstAttribute="height" constant="300" id="dOL-KB-SpH"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-tI-7uM">
+                                        <rect key="frame" x="0.0" y="300" width="300" height="74"/>
+                                        <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="74" id="Lbx-Fd-AR2"/>
+                                        </constraints>
+                                        <attributedString key="attributedText">
+                                            <fragment content="SPARTANVEY">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.20610597729682922" green="0.47088390588760376" blue="0.96475857496261597" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <font key="NSFont" size="36" name="Futura-Medium"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An easy-to-use tool to make and take surveys among the San Jose State Student Body!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-y3-vUz">
+                                        <rect key="frame" x="0.0" y="374" width="300" height="170"/>
+                                        <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-Oj-QIK">
+                                        <rect key="frame" x="0.0" y="544" width="300" height="102"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="GET STARTED!"/>
+                                        <connections>
+                                            <segue destination="Dmg-ry-dM2" kind="show" identifier="Authorization" id="xl6-Hw-6ro"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="J9U-my-Gsw" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="ASA-Cb-o6Y"/>
+                            <constraint firstItem="J9U-my-Gsw" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="gMa-Vq-djN"/>
+                            <constraint firstItem="J9U-my-Gsw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="usL-63-BmS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fJt-Bk-8FF"/>
@@ -79,9 +84,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-J9-Oec">
-                                <rect key="frame" x="123" y="226.66666666666663" width="129" height="419"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-J9-Oec">
+                                <rect key="frame" x="123" y="223.66666666666663" width="129" height="419"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-5E-ZWF">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="419"/>
@@ -97,13 +101,13 @@
                                                 </connections>
                                             </segmentedControl>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5i-L9-IrG">
-                                                <rect key="frame" x="38.666666666666657" y="58.000000000000007" width="52" height="20.333333333333336"/>
+                                                <rect key="frame" x="38.666666666666657" y="58.000000000000036" width="52" height="20.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4J-wX-BHz">
-                                                <rect key="frame" x="44" y="108.33333333333333" width="41" height="20.333333333333329"/>
+                                                <rect key="frame" x="44" y="108.33333333333334" width="41" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -153,6 +157,12 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="YMc-J9-Oec" firstAttribute="centerX" secondItem="jTG-nA-SA9" secondAttribute="centerX" id="Mev-75-deb"/>
+                            <constraint firstItem="e8h-5E-ZWF" firstAttribute="centerX" secondItem="jTG-nA-SA9" secondAttribute="centerX" id="S5Q-1h-dNe"/>
+                            <constraint firstItem="YMc-J9-Oec" firstAttribute="centerY" secondItem="jTG-nA-SA9" secondAttribute="centerY" id="YVi-dY-DGD"/>
+                            <constraint firstItem="YMc-J9-Oec" firstAttribute="width" secondItem="47F-f4-rxs" secondAttribute="height" multiplier="129:812" id="agP-Mz-gSi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jTG-nA-SA9"/>
                     </view>
                     <connections>
@@ -195,7 +205,7 @@
             </objects>
             <point key="canvasLocation" x="2820" y="26.600985221674879"/>
         </scene>
-        <!--Question View Controller-->
+        <!--Title-->
         <scene sceneID="dHA-vK-71e">
             <objects>
                 <tableViewController id="KOT-sf-qgx" customClass="QuestionViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
@@ -204,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionCell" textLabel="ql9-rf-Rc7" style="IBUITableViewCellStyleDefault" id="YEg-1U-PdS">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="QuestionsCell" textLabel="ql9-rf-Rc7" style="IBUITableViewCellStyleDefault" id="YEg-1U-PdS">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YEg-1U-PdS" id="PC5-GV-6qD">
@@ -227,6 +237,15 @@
                             <outlet property="delegate" destination="KOT-sf-qgx" id="kze-7P-Bla"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="wRF-cm-0XT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="LVr-Mc-IbK">
+                            <connections>
+                                <action selector="addNewQuestion:" destination="KOT-sf-qgx" id="XbO-G0-4Om"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkO-mv-Nhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
