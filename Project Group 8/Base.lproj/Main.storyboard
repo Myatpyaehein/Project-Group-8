@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-J9-Oec">
-                                <rect key="frame" x="123" y="223.66666666666663" width="129" height="419"/>
+                                <rect key="frame" x="123" y="201.66666666666663" width="129" height="419"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-5E-ZWF">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="419"/>
@@ -451,7 +451,7 @@
                                         </connections>
                                     </stepper>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.75699952411167515" green="0.75699952411167515" blue="0.75699952411167515" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
