@@ -207,7 +207,7 @@
                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Answer Survey"/>
+                                        <state key="normal" title="Answer Surveys"/>
                                         <connections>
                                             <segue destination="59G-N8-soD" kind="show" identifier="selectSurvey" id="Pye-mP-uv2"/>
                                         </connections>
