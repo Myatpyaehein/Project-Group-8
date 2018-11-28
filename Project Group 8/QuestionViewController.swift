@@ -11,7 +11,7 @@ import UIKit
 
 class QuestionViewController: UITableViewController {
     
-    var questions = ["Do you like cat or dog?", "Number of pet you have"]
+    var questions = ["Do you like cats or dogs?", "Number of pet you have"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
@@ -28,8 +28,13 @@ class QuestionViewController: UITableViewController {
         
     }
     
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            questions.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            
+        }
     }
     
 

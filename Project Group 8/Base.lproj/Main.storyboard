@@ -180,19 +180,23 @@
             </objects>
             <point key="canvasLocation" x="1924" y="26.600985221674879"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="uEU-Z5-5ff">
             <objects>
-                <viewController id="IX7-hB-yqN" customClass="ViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IX7-hB-yqN" customClass="MainViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeF-iD-Pv4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of8-QZ-2Qu">
-                                <rect key="frame" x="132" y="391" width="111" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="frame" x="0.0" y="391" width="375" height="58"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Create A Survey"/>
                                 <connections>
+                                    <action selector="createASurveyPressed:" destination="IX7-hB-yqN" eventType="touchUpInside" id="27E-Qj-v9R"/>
                                     <segue destination="KOT-sf-qgx" kind="show" identifier="createASurvey" id="PfB-QN-ngh"/>
                                 </connections>
                             </button>
@@ -200,12 +204,15 @@
                         <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="r3F-iT-wAo"/>
                     </view>
+                    <connections>
+                        <outlet property="createASurveyButton" destination="of8-QZ-2Qu" id="EzF-6J-qOB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VBX-je-q0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2820" y="26.600985221674879"/>
         </scene>
-        <!--Title-->
+        <!--Pet Survey-->
         <scene sceneID="dHA-vK-71e">
             <objects>
                 <tableViewController id="KOT-sf-qgx" customClass="QuestionViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
@@ -238,7 +245,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="wRF-cm-0XT">
+                    <navigationItem key="navigationItem" title="Pet Survey" id="wRF-cm-0XT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LVr-Mc-IbK">
                             <connections>
                                 <action selector="addNewQuestion:" destination="KOT-sf-qgx" id="XbO-G0-4Om"/>
@@ -250,6 +257,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkO-mv-Nhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3727" y="27"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Fc-9z-k9c">
+            <objects>
+                <viewController id="GAJ-gO-7ik" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XD4-Kp-qCB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJg-9E-kbR">
+                                <rect key="frame" x="67" y="241" width="240" height="306"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your question here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHo-fA-p4V">
+                                        <rect key="frame" x="0.0" y="8" width="240" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75699952411167515" green="0.75699952411167515" blue="0.75699952411167515" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="uQ9-Yz-Zw0"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2B-rK-7q6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4512.8000000000002" y="26.600985221674879"/>
         </scene>
         <!--Forget Password View Controller-->
         <scene sceneID="rwg-J1-ZB6">
