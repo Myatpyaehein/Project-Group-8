@@ -86,8 +86,9 @@
       "scale" : "2x"
     },
     {
-      "idiom" : "ios-marketing",
       "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Screen Shot 2018-11-27 at 6.40.13 PM.png",
       "scale" : "1x"
     }
   ],

@@ -25,10 +25,6 @@
                                     <action selector="Notification:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bk8-2x-7KN"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="K6g-U2-Tbz">
-                                <rect key="frame" x="0.0" y="209" width="375" height="297"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-Oj-QIK">
                                 <rect key="frame" x="61" y="602" width="252" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,9 +39,6 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="fJt-Bk-8FF"/>
-                    <connections>
-                        <outlet property="mapView" destination="K6g-U2-Tbz" id="udA-tl-eNz"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -221,7 +214,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-mO-Hao">
-                                <rect key="frame" x="76" y="227" width="223" height="368"/>
+                                <rect key="frame" x="76" y="271" width="223" height="324"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
                                         <rect key="frame" x="43.333333333333329" y="0.0" width="136.33333333333337" height="20.333333333333332"/>
@@ -230,21 +223,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-go-t0r">
-                                        <rect key="frame" x="0.0" y="70.333333333333314" width="223" height="128"/>
+                                        <rect key="frame" x="0.0" y="70.333333333333314" width="223" height="93.666666666666686"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-7Z-BU2">
-                                        <rect key="frame" x="26.666666666666671" y="248.33333333333329" width="170" height="39.666666666666657"/>
+                                        <rect key="frame" x="26.666666666666671" y="214" width="170" height="30"/>
                                         <accessibility key="accessibilityConfiguration" hint="Enter your email here..." identifier="ForgetPassEmail"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-2g-rxr">
-                                        <rect key="frame" x="92" y="338" width="39" height="30"/>
+                                        <rect key="frame" x="92" y="294" width="39" height="30"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="emailSubmitPressed:" destination="rlR-he-oM4" eventType="touchUpInside" id="05q-sx-Js4"/>
@@ -297,6 +290,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BbT-IV-v7m"/>
+        <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>
 </document>
