@@ -34,6 +34,33 @@
                                     <segue destination="Dmg-ry-dM2" kind="show" identifier="Authorization" id="xl6-Hw-6ro"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SpartanVeyLogo" translatesAutoresizingMaskIntoConstraints="NO" id="2kF-9r-R3a">
+                                <rect key="frame" x="67" y="103" width="240" height="271"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="An easy-to-use tool to make and take surveys among the San Jose State Student Body!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-y3-vUz">
+                                <rect key="frame" x="67" y="444" width="240" height="170"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-tI-7uM">
+                                <rect key="frame" x="67" y="382" width="240" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="SPARTANVEY">
+                                        <attributes>
+                                            <color key="NSColor" red="0.20610597729682922" green="0.47088390588760376" blue="0.96475857496261597" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <font key="NSFont" size="36" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -109,7 +136,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWf-nw-8Li">
                                                 <rect key="frame" x="3" y="389" width="123" height="30"/>
-                                                <state key="normal" title="Forget Password?"/>
+                                                <state key="normal" title="Forgot Password?"/>
                                                 <connections>
                                                     <segue destination="rlR-he-oM4" kind="show" identifier="ForgetPassword" id="wR2-sw-SrM"/>
                                                 </connections>
@@ -216,8 +243,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-mO-Hao">
                                 <rect key="frame" x="76" y="271" width="223" height="324"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forget Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
-                                        <rect key="frame" x="43.333333333333329" y="0.0" width="136.33333333333337" height="20.333333333333332"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
+                                        <rect key="frame" x="43.333333333333329" y="0.0" width="136.66666666666669" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -225,7 +252,7 @@
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-go-t0r">
                                         <rect key="frame" x="0.0" y="70.333333333333314" width="223" height="93.666666666666686"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account.</string>
+                                        <string key="text">Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to set a new password for your account.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
@@ -268,7 +295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zud-tc-xkY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924" y="817"/>
+            <point key="canvasLocation" x="1924" y="816.50246305418727"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j81-x2-wjG">
@@ -289,6 +316,9 @@
             <point key="canvasLocation" x="173.59999999999999" y="26.600985221674879"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="SpartanVeyLogo" width="605" height="639"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>
