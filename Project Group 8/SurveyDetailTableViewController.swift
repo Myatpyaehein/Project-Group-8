@@ -22,49 +22,25 @@ class SurveyDetailTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     
-    var question1Answers = ["Cats", "Dogs"]
-    var question2Answers = ["0", "1", "2", "More than 2"]
+    var questionAnswers = [["Cats", "Dogs"], ["0", "1", "2", "More than 2"]]
+    var question = ["Do you like cats or dogs?","How many pets do you have"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 2;
+        return questionAnswers.count;
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 0
-        switch (section) {
-        case 0:
-            count = question1Answers.count
-        default:
-            count = question2Answers.count
-        }
-        return count
+        return questionAnswers[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OptionsCell", for: indexPath)
-        switch (indexPath.section) {
-            case 0:
-                cell.textLabel?.text = question1Answers[indexPath.row]
-            default:
-                cell.textLabel?.text = question2Answers[indexPath.row]
-        }
+        cell.textLabel?.text = questionAnswers[indexPath.section][indexPath.row]
         return cell
     }
 
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let  headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderCell
-        headerCell.backgroundColor = UIColor.gray
-        
-        switch (section) {
-        case 0:
-            headerCell.headerLabel.text = "Do you like cats or dogs?";
-        //return sectionHeaderView
-        default:
-            headerCell.headerLabel.text = "How many pets do you have";
-        //return sectionHeaderView
-        }
-        
-        return headerCell
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return question[section]
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
