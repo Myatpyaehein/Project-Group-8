@@ -13,6 +13,8 @@ class MainViewController: UIViewController {
     var titleTextField: UITextField?
     
     @IBOutlet weak var createASurveyButton: UIButton!
+    @IBOutlet weak var answerSurvey: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +40,8 @@ class MainViewController: UIViewController {
         let title = titleTextField?.text
         self.performSegue(withIdentifier: "createASurvey", sender: self)
     }
+    
+    
     
     
     /*

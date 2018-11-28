@@ -188,20 +188,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of8-QZ-2Qu">
-                                <rect key="frame" x="0.0" y="391" width="375" height="58"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Create A Survey"/>
-                                <connections>
-                                    <action selector="createASurveyPressed:" destination="IX7-hB-yqN" eventType="touchUpInside" id="27E-Qj-v9R"/>
-                                    <segue destination="KOT-sf-qgx" kind="show" identifier="createASurvey" id="PfB-QN-ngh"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7NA-vj-lc5">
+                                <rect key="frame" x="0.0" y="381" width="375" height="104"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of8-QZ-2Qu">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Create A Survey"/>
+                                        <connections>
+                                            <action selector="createASurveyPressed:" destination="IX7-hB-yqN" eventType="touchUpInside" id="27E-Qj-v9R"/>
+                                            <segue destination="KOT-sf-qgx" kind="show" identifier="createASurvey" id="PfB-QN-ngh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8H-bZ-tHQ">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="48"/>
+                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Answer Survey"/>
+                                        <connections>
+                                            <segue destination="59G-N8-soD" kind="show" identifier="selectSurvey" id="Pye-mP-uv2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.72941176470588232" blue="0.36078431372549019" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="7NA-vj-lc5" firstAttribute="centerY" secondItem="r3F-iT-wAo" secondAttribute="centerY" id="0ug-pd-K3i"/>
+                            <constraint firstItem="r3F-iT-wAo" firstAttribute="trailing" secondItem="7NA-vj-lc5" secondAttribute="trailing" id="ZhT-Bz-Jrw"/>
+                            <constraint firstItem="7NA-vj-lc5" firstAttribute="leading" secondItem="r3F-iT-wAo" secondAttribute="leading" id="tPg-WB-Xye"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="r3F-iT-wAo"/>
                     </view>
                     <connections>
@@ -258,6 +277,111 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkO-mv-Nhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3727" y="27"/>
+        </scene>
+        <!--Select Survey Table View Controller-->
+        <scene sceneID="PLX-ke-vHC">
+            <objects>
+                <tableViewController id="59G-N8-soD" customClass="SelectSurveyTableViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4QT-U2-zZm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SurveiesCell" textLabel="S4r-07-jNQ" style="IBUITableViewCellStyleDefault" id="0lb-fz-nPe">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0lb-fz-nPe" id="XCr-7Y-ZO1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="S4r-07-jNQ">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="EBi-C8-rU0" kind="show" id="NV0-bk-y35"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="59G-N8-soD" id="8gl-VU-Os1"/>
+                            <outlet property="delegate" destination="59G-N8-soD" id="KUi-IF-dEW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tS-9s-BxC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3726" y="817"/>
+        </scene>
+        <!--Pet Survey-->
+        <scene sceneID="6Ku-Xa-oNa">
+            <objects>
+                <tableViewController id="EBi-C8-rU0" customClass="SurveyDetailTableViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="kOD-p9-CRd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HeaderCell" id="3aq-bq-bML" customClass="HeaderCell" customModule="Project_Group_8" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3aq-bq-bML" id="P3B-oB-cTS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWC-xl-CPx">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="hWC-xl-CPx" secondAttribute="trailing" id="3AH-fH-0zZ"/>
+                                        <constraint firstItem="hWC-xl-CPx" firstAttribute="leading" secondItem="P3B-oB-cTS" secondAttribute="leadingMargin" id="fKd-nF-ZPT"/>
+                                        <constraint firstItem="hWC-xl-CPx" firstAttribute="bottom" secondItem="P3B-oB-cTS" secondAttribute="bottomMargin" id="kGA-iF-Y0a"/>
+                                        <constraint firstItem="hWC-xl-CPx" firstAttribute="top" secondItem="P3B-oB-cTS" secondAttribute="topMargin" id="wHV-8C-dMt"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="headerLabel" destination="hWC-xl-CPx" id="EIb-rc-yOk"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionsCell" textLabel="UYf-Mv-Zfc" style="IBUITableViewCellStyleDefault" id="9Sk-Ds-KLR" customClass="HeaderCell" customModule="Project_Group_8" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9Sk-Ds-KLR" id="zB8-vN-d5X">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UYf-Mv-Zfc">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="EBi-C8-rU0" id="Bw3-Ht-xEa"/>
+                            <outlet property="delegate" destination="EBi-C8-rU0" id="cnN-s5-MBx"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Pet Survey" id="c4v-9p-yj0">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ZK4-9Q-f2T"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YOM-AO-3dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4512.8000000000002" y="816.50246305418727"/>
         </scene>
         <!--Add Question Popup View Controller-->
         <scene sceneID="0Fc-9z-k9c">
@@ -353,7 +477,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-mO-Hao">
-                                <rect key="frame" x="76" y="227" width="223" height="368"/>
+                                <rect key="frame" x="76" y="271" width="223" height="324"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
                                         <rect key="frame" x="35.666666666666671" y="0.0" width="152" height="23"/>
@@ -362,21 +486,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-go-t0r">
-                                        <rect key="frame" x="0.0" y="73" width="223" height="126"/>
+                                        <rect key="frame" x="0.0" y="73" width="223" height="91"/>
                                         <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <string key="text">Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to set a new password for your account.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-7Z-BU2">
-                                        <rect key="frame" x="26.666666666666671" y="249" width="170" height="39"/>
+                                        <rect key="frame" x="26.666666666666671" y="214" width="170" height="30"/>
                                         <accessibility key="accessibilityConfiguration" hint="Enter your email here..." identifier="ForgetPassEmail"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-2g-rxr">
-                                        <rect key="frame" x="92" y="338" width="39" height="30"/>
+                                        <rect key="frame" x="92" y="294" width="39" height="30"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="emailSubmitPressed:" destination="rlR-he-oM4" eventType="touchUpInside" id="05q-sx-Js4"/>
@@ -432,6 +556,6 @@
         <image name="SpartanVeyLogo" width="605" height="639"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BbT-IV-v7m"/>
+        <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>
 </document>
