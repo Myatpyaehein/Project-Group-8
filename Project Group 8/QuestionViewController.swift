@@ -11,7 +11,7 @@ import UIKit
 
 class QuestionViewController: UITableViewController {
     
-    var questions = ["Do you like cats or dogs?", "Number of pet you have"]
+    var questions = ["Do you like cats or dogs?", "Number of pets you have"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
@@ -25,7 +25,6 @@ class QuestionViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "QuestionsCell", for: indexPath)
         cell.textLabel?.text = questions[indexPath.row]
         return cell
-        
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -36,11 +35,11 @@ class QuestionViewController: UITableViewController {
             
         }
     }
-    
 
     @IBAction func addNewQuestion(_ sender: UIBarButtonItem) {
-        questions += ["Untitled"]
-        tableView.reloadData()
+//        questions += ["Untitled"]
+//        tableView.reloadData()
+        self.performSegue(withIdentifier: "addQuestion", sender: self)
     }
     
     
