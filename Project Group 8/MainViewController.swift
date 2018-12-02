@@ -13,7 +13,7 @@ import FirebaseFirestore
 class MainViewController: UIViewController {
 
     var titleTextField: UITextField?
-    var surveyID = ""
+    var surveyID: String?
     
     @IBOutlet weak var createASurveyButton: UIButton!
     @IBOutlet weak var answerSurveyButton: UIButton!
@@ -22,6 +22,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.navigationItem.hidesBackButton = true
     }
     
     @IBAction func createASurveyPressed(_ sender: UIButton) {
@@ -59,18 +60,17 @@ class MainViewController: UIViewController {
                         db.collection("user").document(id!).updateData([
                             "survey": surveyList
                             ])
+                        self.performSegue(withIdentifier: "createASurvey", sender: self)
                     }
                 }
-
             }
         }
-        self.performSegue(withIdentifier: "createASurvey", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "createASurvey") {
             let vc = segue.destination as! QuestionViewController
-            vc.surveyID = surveyID
+            vc.surveyID = self.surveyID ?? ""
             vc.surveyTitle = (titleTextField?.text)!
         }
     }

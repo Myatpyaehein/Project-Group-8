@@ -11,26 +11,38 @@ import UIKit
 import FirebaseFirestore
 
 
-class QuestionViewController: UITableViewController{
+class QuestionViewController: UITableViewController, addQuestionProtocol {
+    
+    var surveyID = ""
+    var surveyTitle = ""
+    var questions = [String]()
+    var options = [String: [String]]()
+    var optionsResult = [String: [Int]]()
+    
+    @IBOutlet var surveyQuestionTableView: UITableView!
+    
+    func passData(question: String, option: [String]) {
+        var optionsResultHolder = [Int]()
+        self.questions.append(question)
+        self.options[String(questions.count - 1)] = option
+        for _ in option {
+          optionsResultHolder.append(0)
+        }
+        self.optionsResult[String(questions.count - 1)] = optionsResultHolder
+        print(self.questions)
+        print(self.options)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = surveyTitle
-        if newQuestion != "" {
-            questions.append(newQuestion)
-            options.append(newOptions)
-        }
+        DataManager.shared.firstVC = self
     }
-    var surveyID = ""
-    var surveyTitle = ""
-    var newQuestion = ""
-    var newOptions = [String]()
-    var questions = [String]()
-    var options = [[String]]()
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
+    
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return questions.count
@@ -52,10 +64,36 @@ class QuestionViewController: UITableViewController{
     }
     
     @IBAction func addNewQuestion(_ sender: UIBarButtonItem) {
-//        questions += ["Untitled"]
-//        tableView.reloadData()
-        self.performSegue(withIdentifier: "addQuestion", sender: self)
+       self.performSegue(withIdentifier: "addQuestion", sender: self)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? addQuestionPopupViewController {
+            vc.delegate = self
+        }
+    }
     
+    @IBOutlet weak var submitSurveyButton: UIBarButtonItem!
+    
+    @IBAction func submitSurveyButtonPressed(_ sender: UIBarButtonItem) {
+        let db = Firestore.firestore()
+        db.collection("survey").document(self.surveyID).setData([
+            "title": self.surveyTitle,
+            "question": self.questions,
+            "options": self.options,
+            "optionsResult": self.optionsResult
+            ]){ err in
+                if let err = err {
+                    print("Error updating document: \(err)")
+                } else {
+                    print("Document successfully updated")
+                    self.performSegue(withIdentifier: "finishedAddedSurvey", sender: self)
+                }
+        }
+    }
+}
+
+class DataManager {
+    static let shared = DataManager()
+    var firstVC = QuestionViewController()
 }

@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7NA-vj-lc5">
-                                <rect key="frame" x="0.0" y="353" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="306.66666666666669" width="375" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of8-QZ-2Qu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -277,7 +277,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="title" id="wRF-cm-0XT">
-                        <barButtonItem key="leftBarButtonItem" title="Submit" id="EKb-jg-ne5"/>
+                        <barButtonItem key="leftBarButtonItem" title="Submit" id="EKb-jg-ne5">
+                            <connections>
+                                <action selector="submitSurveyButtonPressed:" destination="KOT-sf-qgx" id="gxJ-LO-NJS"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="LVr-Mc-IbK">
                             <connections>
                                 <action selector="addNewQuestion:" destination="KOT-sf-qgx" id="XbO-G0-4Om"/>
@@ -286,6 +290,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="submitSurveyButton" destination="EKb-jg-ne5" id="d2O-zA-vc2"/>
+                        <outlet property="surveyQuestionTableView" destination="TaX-12-a00" id="eWE-4r-dSz"/>
+                        <segue destination="IX7-hB-yqN" kind="show" identifier="finishedAddedSurvey" id="wzq-uq-MRQ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QkO-mv-Nhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -408,67 +417,67 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJg-9E-kbR">
-                                <rect key="frame" x="91.666666666666671" y="245.33333333333334" width="191.66666666666663" height="338.33333333333326"/>
+                                <rect key="frame" x="54.666666666666657" y="245.33333333333334" width="265.66666666666674" height="338.33333333333326"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ggs-BP-0at">
-                                        <rect key="frame" x="0.0" y="8" width="191.66666666666666" height="315.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="8" width="265.66666666666669" height="315.33333333333331"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your question here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHo-fA-p4V">
-                                                <rect key="frame" x="0.0" y="0.0" width="191.66666666666666" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="265.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CC-9y-Dnx">
-                                                <rect key="frame" x="63.999999999999986" y="35.999999999999972" width="63.666666666666671" height="20.333333333333329"/>
+                                                <rect key="frame" x="101.00000000000001" y="35.999999999999972" width="63.666666666666671" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXY-gf-TKK">
-                                                <rect key="frame" x="0.0" y="62.333333333333343" width="191.66666666666666" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your choice here or leave empty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FXY-gf-TKK">
+                                                <rect key="frame" x="0.0" y="62.333333333333343" width="265.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKw-Nf-xVv">
-                                                <rect key="frame" x="62.999999999999986" y="98.333333333333343" width="66.000000000000014" height="20.333333333333329"/>
+                                                <rect key="frame" x="100" y="98.333333333333343" width="66" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76e-zo-hxp">
-                                                <rect key="frame" x="0.0" y="124.66666666666666" width="191.66666666666666" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your choice here or leave empty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76e-zo-hxp">
+                                                <rect key="frame" x="0.0" y="124.66666666666666" width="265.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgx-33-dDU">
-                                                <rect key="frame" x="74.999999999999986" y="160.66666666666666" width="41.666666666666671" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgx-33-dDU">
+                                                <rect key="frame" x="99.666666666666686" y="160.66666666666666" width="66.333333333333314" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e89-QQ-lII">
-                                                <rect key="frame" x="0.0" y="186.99999999999997" width="191.66666666666666" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your choice here or leave empty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e89-QQ-lII">
+                                                <rect key="frame" x="0.0" y="186.99999999999997" width="265.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbu-re-zLt">
-                                                <rect key="frame" x="74.999999999999986" y="222.99999999999997" width="41.666666666666671" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Option 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fbu-re-zLt">
+                                                <rect key="frame" x="99.666666666666686" y="222.99999999999997" width="66.666666666666686" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCZ-jv-D6Y">
-                                                <rect key="frame" x="0.0" y="249.33333333333337" width="191.66666666666666" height="30"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your choice here or leave empty" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eCZ-jv-D6Y">
+                                                <rect key="frame" x="0.0" y="249.33333333333337" width="265.66666666666669" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Aa-dh-oIa">
-                                                <rect key="frame" x="71.333333333333329" y="285.33333333333326" width="49" height="30"/>
+                                                <rect key="frame" x="108.33333333333334" y="285.33333333333326" width="49" height="30"/>
                                                 <state key="normal" title="Submit"/>
                                                 <connections>
                                                     <action selector="submitQuestionPressed:" destination="GAJ-gO-7ik" eventType="touchUpInside" id="nBC-F4-YJ0"/>
@@ -481,8 +490,10 @@
                                             <constraint firstItem="eCZ-jv-D6Y" firstAttribute="leading" secondItem="ggs-BP-0at" secondAttribute="leading" id="F1R-4k-s6A"/>
                                             <constraint firstAttribute="trailing" secondItem="76e-zo-hxp" secondAttribute="trailing" id="Wzo-fO-AyW"/>
                                             <constraint firstAttribute="trailing" secondItem="FXY-gf-TKK" secondAttribute="trailing" id="cs2-5D-LWm"/>
+                                            <constraint firstAttribute="trailing" secondItem="jHo-fA-p4V" secondAttribute="trailing" id="e76-UE-TBF"/>
                                             <constraint firstItem="FXY-gf-TKK" firstAttribute="leading" secondItem="ggs-BP-0at" secondAttribute="leading" id="fGT-Bk-O4w"/>
                                             <constraint firstItem="e89-QQ-lII" firstAttribute="leading" secondItem="ggs-BP-0at" secondAttribute="leading" id="fbx-HJ-OGo"/>
+                                            <constraint firstItem="jHo-fA-p4V" firstAttribute="leading" secondItem="ggs-BP-0at" secondAttribute="leading" id="jeE-ft-d84"/>
                                             <constraint firstItem="76e-zo-hxp" firstAttribute="leading" secondItem="ggs-BP-0at" secondAttribute="leading" id="jyr-jb-mdU"/>
                                         </constraints>
                                     </stackView>
@@ -604,6 +615,7 @@
         <image name="SpartanVeyLogo" width="605" height="639"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wzq-uq-MRQ"/>
         <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,38 +10,38 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 
-protocol addQuestionProtocol {
-    func passData(question: String, options: [String])
+protocol addQuestionProtocol: class {
+    func passData(question: String, option: [String])
 }
 
 class addQuestionPopupViewController: UIViewController {
     
-    var addQuestionProtocol: addQuestionProtocol?
     var question = ""
-    var options = [String]()
+    var option = [String]()
+    var delegate: addQuestionProtocol?
+    
+    
     @IBOutlet weak var submitQuestionButton: UIButton!
     @IBAction func submitQuestionPressed(_ sender: UIButton) {
         if questionTextField.text != "" {
-            let question = questionTextField?.text
+            question = (questionTextField?.text)!
             if option1TextField?.text != ""{
-                options.append((option1TextField?.text)!)
+                option.append((option1TextField?.text)!)
+            }
+            if option2TextField?.text != ""{
+                option.append((option2TextField?.text)!)
             }
             if option3TextField?.text != ""{
-                options.append((option2TextField?.text)!)
+                option.append((option3TextField?.text)!)
             }
             if option4TextField?.text != ""{
-                options.append((option3TextField?.text)!)
+                option.append((option4TextField?.text)!)
             }
-            if option4TextField?.text != ""{
-                options.append((option4TextField?.text)!)
-            }
-        } else{
-            
-        }
-        dismiss(animated: true)
-        if let presenter = presentingViewController as? QuestionViewController {
-            presenter.newQuestion = self.question
-            presenter.newOptions = self.options
+            delegate?.passData(question: question, option: option)
+            DataManager.shared.firstVC.tableView.reloadData()
+            dismiss(animated: true, completion: nil)
+        } else {
+            print ("question is empty")
         }
     }
 
@@ -55,7 +55,5 @@ class addQuestionPopupViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-    
-    
 }
 
