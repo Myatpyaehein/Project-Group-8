@@ -7,35 +7,61 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class SelectSurveyTableViewController: UITableViewController {
 
+    var surveiesTitle = [String]()
+    var surveiesID = [String]()
+    var surveyID: String?
+    var surveyTitle: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        let db = Firestore.firestore()
+        db.collection("survey").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    self.surveiesID.append(document.documentID)
+                    self.surveiesTitle.append(document.data()["title"] as! String)
+                }
+                self.tableView.reloadData();
+            }
+        }
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
-    var surveies = ["Pet Survey"]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return surveies.count
+        return surveiesTitle.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SurveiesCell", for: indexPath)
-        cell.textLabel?.text = surveies[indexPath.row]
+        cell.textLabel?.text = surveiesTitle[indexPath.row]
         return cell
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+        self.surveyID = surveiesID[indexPath.row]
+        self.surveyTitle = surveiesTitle[indexPath.row]
+        self.performSegue(withIdentifier: "openSurvey", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "openSurvey") {
+            let vc = segue.destination as! AnswerSurveyDetailTableViewController
+            vc.surveyID = self.surveyID ?? ""
+            vc.surveyTitle = self.surveyTitle ?? ""
+        }
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
@@ -78,16 +104,6 @@ class SelectSurveyTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the item to be re-orderable.
         return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
     */
 

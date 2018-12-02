@@ -77,8 +77,7 @@ class QuestionViewController: UITableViewController, addQuestionProtocol {
     
     @IBAction func submitSurveyButtonPressed(_ sender: UIBarButtonItem) {
         let db = Firestore.firestore()
-        db.collection("survey").document(self.surveyID).setData([
-            "title": self.surveyTitle,
+        db.collection("survey").document(self.surveyID).updateData([
             "question": self.questions,
             "options": self.options,
             "optionsResult": self.optionsResult

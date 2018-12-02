@@ -7,26 +7,46 @@
 //
 
 import UIKit
+import FirebaseFirestore
+class AnswerSurveyDetailTableViewController: UITableViewController {
 
-class SurveyDetailTableViewController: UITableViewController {
-
+    var surveyID: String?
+    var surveyTitle: String?
+    var questionAnswers = [[String]]()
+    var question = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = surveyTitle
+        print("ID: " + surveyID!)
+        let db = Firestore.firestore()
+        db.collection("survey").document(self.surveyID!).getDocument() { (document, err) in
+            if let document = document {
+                self.question = document.data()!["question"] as! [String]
+                let optionsDic = document.data()!["options"] as! [String: [String]]
+                for key in optionsDic.keys {
+                    self.questionAnswers.append(optionsDic[key]!)
+                }
+                print(optionsDic)
+                self.tableView.reloadData()
+            } else {
+                print("Document does not exist in cache")
+            }
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
     // MARK: - Table view data source
     
-    var questionAnswers = [["Cats", "Dogs"], ["0", "1", "2", "More than 2"]]
-    var question = ["Do you like cats or dogs?","How many pets do you have"]
+//    var questionAnswers = [["Cats", "Dogs"], ["0", "1", "2", "More than 2"]]
+//    var question = ["Do you like cats or dogs?","How many pets do you have"]
+
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return questionAnswers.count;
+        return question.count;
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

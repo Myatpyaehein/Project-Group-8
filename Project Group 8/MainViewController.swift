@@ -46,6 +46,7 @@ class MainViewController: UIViewController {
         let id = Auth.auth().currentUser?.uid
         var ref: DocumentReference? = nil
         ref = db.collection("survey").addDocument(data: [
+            "creator": id!,
             "title": title!
         ]) { err in
             if let err = err {
@@ -57,9 +58,9 @@ class MainViewController: UIViewController {
                     if let document = document {
                         var surveyList = document["survey"] as? Array ?? [""]
                         surveyList.append(ref!.documentID)
-                        db.collection("user").document(id!).updateData([
-                            "survey": surveyList
-                            ])
+//                        db.collection("user").document(id!).updateData([
+//                            "survey": surveyList
+//                            ])
                         self.performSegue(withIdentifier: "createASurvey", sender: self)
                     }
                 }

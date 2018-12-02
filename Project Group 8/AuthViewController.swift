@@ -63,11 +63,11 @@ class AuthViewController: UIViewController {
                     // check that user is not nil
                     if user != nil {
                         //user if found
-                        let id = Auth.auth().currentUser?.uid
-                        let db = Firestore.firestore()
-                        db.collection("user").document(id!).setData([
-                            "survey": []
-                            ])
+//                        let id = Auth.auth().currentUser?.uid
+//                        let db = Firestore.firestore()
+//                        db.collection("user").document(id!).setData([
+//                            "survey": []
+//                            ])
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found
