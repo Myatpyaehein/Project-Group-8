@@ -11,7 +11,6 @@ import Firebase
 import FirebaseAuth
 
 class AuthViewController: UIViewController {
-
     
     @IBOutlet weak var authSelector: UISegmentedControl!
     
@@ -45,7 +44,7 @@ class AuthViewController: UIViewController {
             if isSignIn {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                     // check that user is not nil
-                    if let u = user {
+                    if user != nil {
                         //user if found
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
@@ -62,8 +61,13 @@ class AuthViewController: UIViewController {
             else {
                 Auth.auth().createUser(withEmail: email, password: password, completion:  { (user, error) in
                     // check that user is not nil
-                    if let u = user {
+                    if user != nil {
                         //user if found
+                        let id = Auth.auth().currentUser?.uid
+                        let db = Firestore.firestore()
+                        db.collection("user").document(id!).setData([
+                            "survey": []
+                            ])
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found

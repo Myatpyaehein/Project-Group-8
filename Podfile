@@ -9,6 +9,7 @@ target 'Project Group 8' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Firestore'
 
 end
 

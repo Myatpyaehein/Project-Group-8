@@ -7,51 +7,55 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
-class addQuestionPopupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+protocol addQuestionProtocol {
+    func passData(question: String, options: [String])
+}
+
+class addQuestionPopupViewController: UIViewController {
     
-    var choices = ["0", "1", "2", "More than 2"]
-
-    @IBOutlet weak var ChoicesTableView: UITableView!
-    
-     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1;
+    var addQuestionProtocol: addQuestionProtocol?
+    var question = ""
+    var options = [String]()
+    @IBOutlet weak var submitQuestionButton: UIButton!
+    @IBAction func submitQuestionPressed(_ sender: UIButton) {
+        if questionTextField.text != "" {
+            let question = questionTextField?.text
+            if option1TextField?.text != ""{
+                options.append((option1TextField?.text)!)
+            }
+            if option3TextField?.text != ""{
+                options.append((option2TextField?.text)!)
+            }
+            if option4TextField?.text != ""{
+                options.append((option3TextField?.text)!)
+            }
+            if option4TextField?.text != ""{
+                options.append((option4TextField?.text)!)
+            }
+        } else{
+            
+        }
+        dismiss(animated: true)
+        if let presenter = presentingViewController as? QuestionViewController {
+            presenter.newQuestion = self.question
+            presenter.newOptions = self.options
+        }
     }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return choices.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChoicesCell", for: indexPath)
-        cell.textLabel?.text = choices[indexPath.row]
-        return cell
-    }
-    
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            choices.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-//        } else if editingStyle == .insert {
-//
-//        }
-//    }
 
     @IBOutlet weak var questionTextField: UITextField!
-    @IBOutlet weak var questionNumLabel: UILabel!
-    @IBOutlet weak var questionNumStepper: UIStepper!
-    
+    @IBOutlet weak var option1TextField: UITextField!
+    @IBOutlet weak var option2TextField: UITextField!
+    @IBOutlet weak var option3TextField: UITextField!
+    @IBOutlet weak var option4TextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func stepperPressed(_ sender: UIStepper) {
-        var questionNum = 0
-        questionNum = Int(sender.value)
-        questionNumLabel.text = "Options: " + String(questionNum)
-    }
-  
+    
 }
 

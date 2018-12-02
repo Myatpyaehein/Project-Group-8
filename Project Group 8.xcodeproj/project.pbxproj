@@ -11,7 +11,6 @@
 		700AE0F0217C43750057EAE3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 700AE0EF217C43750057EAE3 /* GoogleService-Info.plist */; };
 		700AE0F2217CEC470057EAE3 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700AE0F1217CEC470057EAE3 /* AuthViewController.swift */; };
 		707A4ED421ACBDC6000828A5 /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A4ED321ACBDC6000828A5 /* ForgetPasswordViewController.swift */; };
-		707A4ED621AE1D09000828A5 /* QuestionCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A4ED521AE1D09000828A5 /* QuestionCellTableViewCell.swift */; };
 		707A4ED821AE7DEE000828A5 /* addQuestionPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A4ED721AE7DEE000828A5 /* addQuestionPopupViewController.swift */; };
 		707A4EDA21AE8223000828A5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A4ED921AE8223000828A5 /* MainViewController.swift */; };
 		707A4EDE21AF4299000828A5 /* SelectSurveyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707A4EDD21AF4299000828A5 /* SelectSurveyTableViewController.swift */; };
@@ -31,7 +30,6 @@
 		700AE0EF217C43750057EAE3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		700AE0F1217CEC470057EAE3 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		707A4ED321ACBDC6000828A5 /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
-		707A4ED521AE1D09000828A5 /* QuestionCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCellTableViewCell.swift; sourceTree = "<group>"; };
 		707A4ED721AE7DEE000828A5 /* addQuestionPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addQuestionPopupViewController.swift; sourceTree = "<group>"; };
 		707A4ED921AE8223000828A5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		707A4EDD21AF4299000828A5 /* SelectSurveyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectSurveyTableViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +102,6 @@
 				70BD96BF216D5B56006F549E /* QuestionViewController.swift */,
 				700AE0F1217CEC470057EAE3 /* AuthViewController.swift */,
 				707A4ED321ACBDC6000828A5 /* ForgetPasswordViewController.swift */,
-				707A4ED521AE1D09000828A5 /* QuestionCellTableViewCell.swift */,
 				707A4ED721AE7DEE000828A5 /* addQuestionPopupViewController.swift */,
 				707A4ED921AE8223000828A5 /* MainViewController.swift */,
 				707A4EDD21AF4299000828A5 /* SelectSurveyTableViewController.swift */,
@@ -207,14 +204,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Project Group 8/Pods-Project Group 8-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,7 +266,6 @@
 				707A4ED421ACBDC6000828A5 /* ForgetPasswordViewController.swift in Sources */,
 				707A4ED821AE7DEE000828A5 /* addQuestionPopupViewController.swift in Sources */,
 				707A4EDE21AF4299000828A5 /* SelectSurveyTableViewController.swift in Sources */,
-				707A4ED621AE1D09000828A5 /* QuestionCellTableViewCell.swift in Sources */,
 				707A4EDA21AE8223000828A5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

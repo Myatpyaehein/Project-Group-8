@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class MainViewController: UIViewController {
 
     var titleTextField: UITextField?
+    var surveyID = ""
     
     @IBOutlet weak var createASurveyButton: UIButton!
-    @IBOutlet weak var answerSurvey: UIButton!
+    @IBOutlet weak var answerSurveyButton: UIButton!
+    @IBOutlet weak var mySurveyButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -38,8 +41,41 @@ class MainViewController: UIViewController {
     
     func submitHandler(alert: UIAlertAction!) {
         let title = titleTextField?.text
+        let db = Firestore.firestore()
+        let id = Auth.auth().currentUser?.uid
+        var ref: DocumentReference? = nil
+        ref = db.collection("survey").addDocument(data: [
+            "title": title!
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                self.surveyID = ref!.documentID
+                db.collection("user").document(id!).getDocument{ (document, error) in
+                    if let document = document {
+                        var surveyList = document["survey"] as? Array ?? [""]
+                        surveyList.append(ref!.documentID)
+                        db.collection("user").document(id!).updateData([
+                            "survey": surveyList
+                            ])
+                    }
+                }
+
+            }
+        }
         self.performSegue(withIdentifier: "createASurvey", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "createASurvey") {
+            let vc = segue.destination as! QuestionViewController
+            vc.surveyID = surveyID
+            vc.surveyTitle = (titleTextField?.text)!
+        }
+    }
+    
+
     
     
     

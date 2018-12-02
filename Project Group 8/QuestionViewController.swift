@@ -8,10 +8,25 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
 
-class QuestionViewController: UITableViewController {
+
+class QuestionViewController: UITableViewController{
     
-    var questions = ["Do you like cats or dogs?", "Number of pets you have"]
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = surveyTitle
+        if newQuestion != "" {
+            questions.append(newQuestion)
+            options.append(newOptions)
+        }
+    }
+    var surveyID = ""
+    var surveyTitle = ""
+    var newQuestion = ""
+    var newOptions = [String]()
+    var questions = [String]()
+    var options = [[String]]()
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
@@ -35,7 +50,7 @@ class QuestionViewController: UITableViewController {
             
         }
     }
-
+    
     @IBAction func addNewQuestion(_ sender: UIBarButtonItem) {
 //        questions += ["Untitled"]
 //        tableView.reloadData()
