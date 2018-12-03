@@ -71,7 +71,7 @@ class AuthViewController: UIViewController {
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found
-                        let alertController = UIAlertController(title: "Registration failed", message: "Please enter correct email and password", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "Registration failed", message: "Please enter email and password correctly", preferredStyle: .alert)
                         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                         alertController.addAction(cancelAction)
                         self.present(alertController, animated: true)

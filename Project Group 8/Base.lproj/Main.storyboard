@@ -106,8 +106,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4J-wX-BHz">
-                                                <rect key="frame" x="44" y="108.33333333333334" width="41" height="20.333333333333343"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SJSU Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4J-wX-BHz">
+                                                <rect key="frame" x="20.999999999999993" y="108.33333333333334" width="87.333333333333314" height="20.333333333333343"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7NA-vj-lc5">
-                                <rect key="frame" x="0.0" y="306.66666666666669" width="375" height="160"/>
+                                <rect key="frame" x="0.0" y="353" width="375" height="160"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of8-QZ-2Qu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
@@ -680,8 +680,7 @@
         <image name="SpartanVeyLogo" width="605" height="639"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="PfB-QN-ngh"/>
-        <segue reference="wzq-uq-MRQ"/>
+        <segue reference="YQo-5v-Xdc"/>
         <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>
 </document>
