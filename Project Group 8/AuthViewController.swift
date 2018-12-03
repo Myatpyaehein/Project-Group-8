@@ -37,6 +37,15 @@ class AuthViewController: UIViewController {
         }
     }
     
+    func isSJSUEmail(testEmail:String) -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@sjsu.edu"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: testEmail)
+        return result
+        
+    }
+    
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         
         //TODO: form validation on the email and password
@@ -48,12 +57,12 @@ class AuthViewController: UIViewController {
             if isSignIn {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                     // check that user is not nil
-                    if user != nil {
+                    if user != nil && self.isSJSUEmail(testEmail: email) == true{
                         //user if found
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found
-                        let alertController = UIAlertController(title: "Sign In failed", message: "Please enter correct email and password", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "Sign In failed", message: "Please enter valid SJSU email and password", preferredStyle: .alert)
                         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                         alertController.addAction(cancelAction)
                         
@@ -65,7 +74,7 @@ class AuthViewController: UIViewController {
             else {
                 Auth.auth().createUser(withEmail: email, password: password, completion:  { (user, error) in
                     // check that user is not nil
-                    if user != nil {
+                    if user != nil && self.isSJSUEmail(testEmail: email) == true{
                         //user if found
 //                        let id = Auth.auth().currentUser?.uid
 //                        let db = Firestore.firestore()
@@ -75,7 +84,7 @@ class AuthViewController: UIViewController {
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
                         //ERROR: user if not found
-                        let alertController = UIAlertController(title: "Registration failed", message: "Please enter email and password correctly", preferredStyle: .alert)
+                        let alertController = UIAlertController(title: "Registration failed", message: "Please enter a valid SJSU email and password", preferredStyle: .alert)
                         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
                         alertController.addAction(cancelAction)
                         self.present(alertController, animated: true)
