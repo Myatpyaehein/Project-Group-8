@@ -424,7 +424,7 @@
             </objects>
             <point key="canvasLocation" x="4513" y="1571"/>
         </scene>
-        <!--Pet Survey-->
+        <!--title-->
         <scene sceneID="6Ku-Xa-oNa">
             <objects>
                 <tableViewController storyboardIdentifier="SurveyDetailTableViewController" id="EBi-C8-rU0" customClass="AnswerSurveyDetailTableViewController" customModule="Project_Group_8" customModuleProvider="target" sceneMemberID="viewController">
@@ -456,9 +456,18 @@
                             <outlet property="delegate" destination="EBi-C8-rU0" id="cnN-s5-MBx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Pet Survey" id="c4v-9p-yj0">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="ZK4-9Q-f2T"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="title" id="JMO-nH-R8A">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="blr-kE-NWf">
+                            <connections>
+                                <action selector="submitSurveyButtonPressed:" destination="EBi-C8-rU0" id="ax7-ax-X1m"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="submitSurveyAnswerButton" destination="blr-kE-NWf" id="o5H-6o-rSw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOM-AO-3dK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -671,6 +680,7 @@
         <image name="SpartanVeyLogo" width="605" height="639"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="PfB-QN-ngh"/>
         <segue reference="wzq-uq-MRQ"/>
         <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>

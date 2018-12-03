@@ -54,16 +54,16 @@ class MainViewController: UIViewController {
             } else {
                 print("Document added with ID: \(ref!.documentID)")
                 self.surveyID = ref!.documentID
-                db.collection("user").document(id!).getDocument{ (document, error) in
-                    if let document = document {
-                        var surveyList = document["survey"] as? Array ?? [""]
-                        surveyList.append(ref!.documentID)
+//                db.collection("user").document(id!).getDocument{ (document, error) in
+//                    if let document = document {
+//                        var surveyList = document["survey"] as? Array ?? [""]
+//                        surveyList.append(ref!.documentID)
 //                        db.collection("user").document(id!).updateData([
 //                            "survey": surveyList
 //                            ])
-                        self.performSegue(withIdentifier: "createASurvey", sender: self)
-                    }
-                }
+                self.performSegue(withIdentifier: "createASurvey", sender: self)
+//                    }
+//                }
             }
         }
     }
@@ -75,20 +75,5 @@ class MainViewController: UIViewController {
             vc.surveyTitle = (titleTextField?.text)!
         }
     }
-    
-
-    
-    
-    
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
