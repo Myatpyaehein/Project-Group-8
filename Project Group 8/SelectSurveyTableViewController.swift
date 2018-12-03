@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import FirebaseFirestore
 
 class SelectSurveyTableViewController: UITableViewController {
@@ -18,7 +17,6 @@ class SelectSurveyTableViewController: UITableViewController {
     var surveyTitle: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        let uid = Auth.auth().currentUser?.uid
         let db = Firestore.firestore()
         db.collection("survey").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -26,10 +24,7 @@ class SelectSurveyTableViewController: UITableViewController {
             } else {
                 for document in querySnapshot!.documents {
                     self.surveiesID.append(document.documentID)
-                    let tempID = document.data()["creator"] as! String
-                    if (tempID != (uid)) {
-                        self.surveiesTitle.append(document.data()["title"] as! String)
-                    }
+                    self.surveiesTitle.append(document.data()["title"] as! String)
                 }
                 self.tableView.reloadData();
             }
