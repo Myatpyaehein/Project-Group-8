@@ -18,11 +18,25 @@ class MainViewController: UIViewController {
     @IBOutlet weak var createASurveyButton: UIButton!
     @IBOutlet weak var answerSurveyButton: UIButton!
     @IBOutlet weak var mySurveyButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.navigationItem.hidesBackButton = true
+    }
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+            self.performSegue(withIdentifier: "logout", sender: self)
+            let alertController = UIAlertController(title: "Logout successful", message: "Thank you for using our services", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            alertController.addAction(cancelAction)
+            self.present(alertController, animated: true)
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
     }
     
     @IBAction func createASurveyPressed(_ sender: UIButton) {
