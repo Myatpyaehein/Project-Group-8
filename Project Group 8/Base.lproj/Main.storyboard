@@ -44,15 +44,15 @@
                                         </attributedString>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An easy-to-use tool to make and take surveys among the San Jose State Student Body!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-y3-vUz">
-                                        <rect key="frame" x="0.0" y="374" width="300" height="170"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="An easy-to-use tool to make and take surveys for San Jose State Students!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TAH-y3-vUz">
+                                        <rect key="frame" x="0.0" y="374" width="300" height="180"/>
                                         <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-MediumOblique" family="Avenir" pointSize="30"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ekc-Oj-QIK">
-                                        <rect key="frame" x="0.0" y="544" width="300" height="102"/>
+                                        <rect key="frame" x="0.0" y="554" width="300" height="92"/>
                                         <fontDescription key="fontDescription" name="Avenir-BlackOblique" family="Avenir" pointSize="30"/>
                                         <state key="normal" title="GET STARTED!"/>
                                         <connections>
@@ -85,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-J9-Oec">
-                                <rect key="frame" x="123" y="181" width="129" height="460"/>
+                                <rect key="frame" x="123" y="203" width="129" height="460"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="e8h-5E-ZWF">
                                         <rect key="frame" x="0.0" y="0.0" width="129" height="460"/>
@@ -207,7 +207,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7NA-vj-lc5">
-                                <rect key="frame" x="0.0" y="323" width="375" height="176"/>
+                                <rect key="frame" x="0.0" y="345" width="375" height="176"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="of8-QZ-2Qu">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
@@ -641,7 +641,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-mO-Hao">
-                                <rect key="frame" x="76" y="227" width="223" height="368"/>
+                                <rect key="frame" x="76" y="271" width="223" height="324"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Your Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
                                         <rect key="frame" x="11.666666666666671" y="0.0" width="199.66666666666663" height="24.666666666666668"/>
@@ -650,21 +650,21 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-go-t0r">
-                                        <rect key="frame" x="0.0" y="74.666666666666686" width="223" height="120.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="74.666666666666686" width="223" height="76.333333333333314"/>
                                         <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <string key="text">Please enter your SJSU email address. A verification code will be sent to you shortly. Once you have received the verification code, you will be able to set a new password for your account.              Thank you for using SpartanVey!                          </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-7Z-BU2">
-                                        <rect key="frame" x="26.666666666666671" y="245" width="170" height="30"/>
+                                        <rect key="frame" x="26.666666666666671" y="201" width="170" height="30"/>
                                         <accessibility key="accessibilityConfiguration" hint="Enter your email here..." identifier="ForgetPassEmail"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-2g-rxr">
-                                        <rect key="frame" x="82" y="325" width="59" height="43"/>
+                                        <rect key="frame" x="82" y="281" width="59" height="43"/>
                                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
@@ -722,6 +722,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="YQo-5v-Xdc"/>
-        <segue reference="DaY-fP-Hny"/>
+        <segue reference="xl6-Hw-6ro"/>
     </inferredMetricsTieBreakers>
 </document>
