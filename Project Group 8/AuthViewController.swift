@@ -37,6 +37,15 @@ class AuthViewController: UIViewController {
         }
     }
     
+    func isSJSUEmail(testEmail:String) -> Bool {
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@sjsu.edu"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let result = emailTest.evaluate(with: testEmail)
+        return result
+        
+    }
+    
     @IBAction func signInButtonTapped(_ sender: UIButton) {
         
         //TODO: form validation on the email and password
@@ -48,7 +57,7 @@ class AuthViewController: UIViewController {
             if isSignIn {
                 Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                     // check that user is not nil
-                    if user != nil {
+                    if user != nil && self.isSJSUEmail(testEmail: email) == true{
                         //user if found
                         self.performSegue(withIdentifier: "signInTester", sender: self)
                     } else {
@@ -65,7 +74,7 @@ class AuthViewController: UIViewController {
             else {
                 Auth.auth().createUser(withEmail: email, password: password, completion:  { (user, error) in
                     // check that user is not nil
-                    if user != nil {
+                    if user != nil && self.isSJSUEmail(testEmail: email) == true{
                         //user if found
 //                        let id = Auth.auth().currentUser?.uid
 //                        let db = Firestore.firestore()
