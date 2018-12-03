@@ -632,28 +632,29 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="bV2-mO-Hao">
                                 <rect key="frame" x="76" y="227" width="223" height="368"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
-                                        <rect key="frame" x="35.666666666666671" y="0.0" width="152" height="23"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Forgot Your Password?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZO-Sv-ai2">
+                                        <rect key="frame" x="11.666666666666671" y="0.0" width="199.66666666666663" height="24.666666666666668"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="18"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-go-t0r">
-                                        <rect key="frame" x="0.0" y="73" width="223" height="133"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SR9-go-t0r">
+                                        <rect key="frame" x="0.0" y="74.666666666666686" width="223" height="120.33333333333331"/>
                                         <color key="backgroundColor" red="1" green="0.72941176470000002" blue="0.36078431370000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <string key="text">Please enter the SJSU email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to set a new password for your account.</string>
+                                        <string key="text">Please enter your SJSU email address. A verification code will be sent to you shortly. Once you have received the verification code, you will be able to set a new password for your account.              Thank you for using SpartanVey!                          </string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rWt-7Z-BU2">
-                                        <rect key="frame" x="26.666666666666671" y="256" width="170" height="32"/>
+                                        <rect key="frame" x="26.666666666666671" y="245" width="170" height="30"/>
                                         <accessibility key="accessibilityConfiguration" hint="Enter your email here..." identifier="ForgetPassEmail"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSJ-2g-rxr">
-                                        <rect key="frame" x="92" y="338" width="39" height="30"/>
+                                        <rect key="frame" x="82" y="325" width="59" height="43"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="22"/>
                                         <state key="normal" title="Reset"/>
                                         <connections>
                                             <action selector="emailSubmitPressed:" destination="rlR-he-oM4" eventType="touchUpInside" id="05q-sx-Js4"/>
